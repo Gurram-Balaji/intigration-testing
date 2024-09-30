@@ -1,0 +1,33 @@
+{
+  "feature":{
+    "id": "BookingApiFailureScenarios",
+    "description": "This is for Booking api failure test scenarios",
+    "authUsername": "admin",
+    "authPassword": "password123",
+    "scenarios": {
+      "BookingApiFailureScenarios_CreateBookingFailure_TS01": {
+        "uservice": "booking",
+        "basePath": "/booking",
+        "params": [{
+          "name": "bookid",
+          "value": "bookingid"
+        }],
+        "doNotCompare": [
+          {"path": "bookingid"}
+        ]
+      },
+      "BookingApiFailureScenarios_GetBookingFailureScenario_TS02": {
+        "uservice": "booking",
+        "basePath": "/booking/${bookid}"
+      },
+      "BookingApiFailureScenarios_UpdateBookingFailureScenario_TS03": {
+        "uservice": "booking",
+        "basePath": "/booking/${bookid}"
+      },
+      "BookingApiFailureScenarios_DeleteBookingFailureScenario_TS03": {
+        "uservice": "booking",
+        "basePath": "/booking/${bookid}"
+      }
+    }
+  }
+  }

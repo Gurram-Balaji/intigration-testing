@@ -1,0 +1,11 @@
+{
+  "firstName": "",
+  "lastName": "",
+  "totalPrice": -100,
+  "depositPaid": null,
+  "bookingDates": {
+    "checkin": "",
+    "checkout": ""
+  },
+  "additionalNeeds": ""
+}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="4" time="8.556">
+<testcase classname="This is the test suite foe booking Api success scenarios" name="BookingApi_CreateBooking_TS01" time="3.863">
+<system-out><![CDATA[Given I want to build the request with body.................................passed
+When I submit the "POST" request............................................passed
+Then The status code should be 200..........................................passed
+And The response body should be as expected.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="This is the test suite foe booking Api success scenarios" name="BookingApi_GetBookingDetails_TS02" time="1.501">
+<system-out><![CDATA[Given I want to build the request...........................................passed
+When I submit the "GET" request.............................................passed
+Then The status code should be 200..........................................passed
+And The response body should be as expected.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="This is the test suite foe booking Api success scenarios" name="BookingApi_UpdateBooking_TS03" time="1.477">
+<system-out><![CDATA[Given I want to build the request with body.................................passed
+When I submit the "PUT" request.............................................passed
+Then The status code should be 200..........................................passed
+And The response body should be as expected.................................passed
+]]></system-out>
+</testcase>
+<testcase classname="This is the test suite foe booking Api success scenarios" name="BookingApi_DeleteBooking_TS04" time="1.39">
+<system-out><![CDATA[Given I want to build the request...........................................passed
+When I submit the "DELETE" request..........................................passed
+Then The status code should be 201..........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

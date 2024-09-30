@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extentreports>
+  <configuration>
+    <documentTitle>Nextuple - Cucumber Framework</documentTitle>
+    <encoding>UTF-8</encoding>
+    <protocol>https</protocol>
+    <reportName>Nextuple - Cucumber Report</reportName>
+    <theme>dark</theme>
+  </configuration>
+</extentreports>
