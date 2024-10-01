@@ -1,0 +1,47 @@
+{
+  "feature": {
+    "id": "BookingSuccess",
+    "description": "This feature is to test booking api",
+    "authUsername": "admin",
+    "authPassword": "password123",
+    "scenarios": {
+      "BookingSuccess_CreateBooking_TS01": {
+        "uservice": "booking",
+        "basePath": "/booking",
+        "params": [
+          {
+            "name": "bookid",
+            "value": "bookingid"
+          }
+        ],
+        "doNotCompare": [
+          {"path": "bookingid"}
+        ]
+      },
+      "BookingSuccess_GetBookingDetails_TS02": {
+        "uservice": "booking",
+        "basePath": "/booking/${bookid}"
+      },
+      "BookingSuccess_UpdateBooking_TS03": {
+        "uservice": "booking",
+        "basePath": "/booking/${bookid}",
+        "headerParams": [
+          {
+            "name": "Authorization",
+            "value": "Basic YWRtaW46cGFzc3dvcmQxMjM="
+          }
+        ]
+      },
+      "BookingSuccess_DeleteBooking_TS04": {
+        "uservice": "booking",
+        "basePath": "/booking/${bookid}",
+        "headerParams": [
+          {
+            "name": "Authorization",
+            "value": "Basic YWRtaW46cGFzc3dvcmQxMjM="
+          }
+        ]
+      }
+    }
+  }
+}

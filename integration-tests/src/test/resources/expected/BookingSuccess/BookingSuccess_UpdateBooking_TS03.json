@@ -1,0 +1,12 @@
+{
+  "firstname": "Gurram",
+  "lastname": "Balaji",
+  "totalprice": 100,
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2024-09-13",
+    "checkout": "2024-09-17"
+  },
+  "additionalneeds": "Bath Tub"
+
+}

@@ -1,0 +1,10 @@
+{
+  "firstname": "guram",
+  "lastname": "Balaji",
+  "depositpaid": true,
+  "bookingdates": {
+    "checkin": "2024-08-03",
+    "checkout": "2024-08-04"
+  },
+  "additionalneeds": "basket"
+}

@@ -1,0 +1,76 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.22.2')
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.25.0"
+    }
+}
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+apply plugin: 'idea'
+apply plugin: 'jacoco'
+apply plugin: 'java'
+apply plugin: "com.jfrog.artifactory"
+
+dependencies {
+    implementation('com.nextuple.cucumber:core-framework:1.2.11-SNAPSHOT') {
+        exclude group: 'com.sun.xml.bind', module: 'jaxb-osgi'
+    }
+    implementation group: 'org.mongodb', name: 'bson', version: '4.2.3'
+
+    implementation 'com.epam.reportportal:agent-java-cucumber6:5.1.1'
+
+    implementation group: 'io.cucumber', name: 'cucumber-testng', version: '6.1.1'
+}
+
+configurations {
+    cucumberRuntime {
+        extendsFrom testImplementation
+    }
+}
+
+test {
+    useTestNG() {
+    }
+    scanForTestClasses = false
+    systemProperty "host", System.getProperty("host")
+    systemProperty "contextPath", System.getProperty("contextPath")
+    systemProperty "port", System.getProperty("port")
+    systemProperty "uservice", System.getProperty("uservice")
+    systemProperty "protocol", System.getProperty("protocol")
+    systemProperty "mongodbURI", System.getProperty("mongodbURI")
+}
+
+artifactoryPublish.skip = true
+
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"
+    publish {
+        repository {
+            repoKey = 'gradle-dev-local'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+        }
+        defaults {
+            publications('mavenJava')
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'gradle-dev'
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+            maven = true
+        }
+    }
+}
